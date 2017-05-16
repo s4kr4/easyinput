@@ -1,0 +1,19 @@
+{
+  "name": "easyinput",
+  "version": "0.0.1",
+  "description": "Input special keys easily.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s4kr4/easyinput.git"
+  },
+  "author": "s4kr4",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/s4kr4/easyinput/issues"
+  },
+  "homepage": "https://github.com/s4kr4/easyinput#readme"
+}
