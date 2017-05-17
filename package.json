@@ -4,7 +4,7 @@
   "description": "Input special keys easily.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers js:babel-register test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/s4kr4/easyinput/issues"
   },
-  "homepage": "https://github.com/s4kr4/easyinput#readme"
+  "homepage": "https://github.com/s4kr4/easyinput#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^3.5.0",
+    "mocha": "^3.4.1"
+  }
 }
