@@ -14,7 +14,7 @@ export default class EasyInput  {
       this.keys.push(this.ignoreDupKey('Alt+'))
     }
 
-    let res = this.keys.join('') + (this.isPrintableKey(event.keyCode) ? event.key : '')
+    let res = (this.isPrintableKey(event.keyCode) ? this.keys.join('') + event.key : '')
 
     return res
   }
