@@ -14,7 +14,7 @@ export default class EasyInput  {
       this.keys.push(this.ignoreDupKey('Alt+'))
     }
 
-    let res = this.keys.join('') + event.key
+    let res = this.keys.join('') + (this.isPrintableKey(event.keyCode) ? event.key : '')
 
     return res
   }
@@ -24,6 +24,14 @@ export default class EasyInput  {
       return key
     } else {
       return ''
+    }
+  }
+
+  isPrintableKey(keyCode) {
+    if (49 <= keyCode && keyCode <= 90) {
+      return true
+    } else {
+      return false
     }
   }
 }
