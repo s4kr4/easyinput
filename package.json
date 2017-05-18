@@ -4,6 +4,7 @@
   "description": "Input special keys easily.",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint index.js",
     "test": "mocha --compilers js:babel-register test/*.test.js"
   },
   "repository": {
@@ -22,6 +23,7 @@
     "babel-core": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "chai": "^3.5.0",
+    "eslint": "^3.19.0",
     "mocha": "^3.4.1"
   }
 }
