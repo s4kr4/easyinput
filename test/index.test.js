@@ -1,17 +1,13 @@
 import { assert } from 'chai'
-import EasyInput from '../index.js'
+import { handleKeyDown } from '../index.js'
 
 describe('EasyInputClass', () => {
 
   let easyInput
 
-  beforeEach(() => {
-    easyInput = new EasyInput()
-  })
-
   context('handleKeyDown()', () => {
     it('press "A" returns A', () => {
-      assert.strictEqual(easyInput.handleKeyDown({
+      assert.strictEqual(handleKeyDown({
         key: 'A',
         keyCode: 65,
         ctrlKey: false,
@@ -21,7 +17,7 @@ describe('EasyInputClass', () => {
     })
 
     it('press "Ctrl + Shift + A" returns Ctrl+Shift+A', () => {
-      assert.strictEqual(easyInput.handleKeyDown({
+      assert.strictEqual(handleKeyDown({
         key: 'A',
         keyCode: 65,
         ctrlKey: true,
@@ -31,7 +27,7 @@ describe('EasyInputClass', () => {
     })
 
     it('press "Ctrl + Shift + Alt + A" returns Ctrl+Shift+A', () => {
-      assert.strictEqual(easyInput.handleKeyDown({
+      assert.strictEqual(handleKeyDown({
         key: 'A',
         keyCode: 65,
         ctrlKey: true,
@@ -41,7 +37,7 @@ describe('EasyInputClass', () => {
     })
 
     it('press "Ctrl" returns nothing', () => {
-      assert.strictEqual(easyInput.handleKeyDown({
+      assert.strictEqual(handleKeyDown({
         key: 'Control',
         keyCode: 17,
         ctrlKey: true,

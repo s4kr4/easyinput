@@ -1,38 +1,39 @@
-export default class EasyInput  {
-  constructor() {
-    this.keys = []
+'use strict'
+
+let keys = []
+
+function handleKeyDown(event) {
+  if (event.ctrlKey) {
+    keys.push(ignoreDupKey('Ctrl+'))
+  }
+  if (event.shiftKey) {
+    keys.push(ignoreDupKey('Shift+'))
+  }
+  if (event.altKey) {
+    keys.push(ignoreDupKey('Alt+'))
   }
 
-  handleKeyDown(event) {
-    if (event.ctrlKey) {
-      this.keys.push(this.ignoreDupKey('Ctrl+'))
-    }
-    if (event.shiftKey) {
-      this.keys.push(this.ignoreDupKey('Shift+'))
-    }
-    if (event.altKey) {
-      this.keys.push(this.ignoreDupKey('Alt+'))
-    }
+  let res = (isPrintableKey(event.keyCode) ? keys.join('') + event.key : '')
 
-    let res = (this.isPrintableKey(event.keyCode) ? this.keys.join('') + event.key : '')
+  return res
+}
 
-    return res
-  }
-
-  ignoreDupKey(key) {
-    if (this.keys.indexOf(key) == -1) {
-      return key
-    } else {
-      return ''
-    }
-  }
-
-  isPrintableKey(keyCode) {
-    if (49 <= keyCode && keyCode <= 90) {
-      return true
-    } else {
-      return false
-    }
+function ignoreDupKey(key) {
+  if (keys.indexOf(key) == -1) {
+    return key
+  } else {
+    return ''
   }
 }
 
+function isPrintableKey(keyCode) {
+  if (49 <= keyCode && keyCode <= 90) {
+    return true
+  } else {
+    return false
+  }
+}
+
+module.exports = {
+  handleKeyDown
+}
