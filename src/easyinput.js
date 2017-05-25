@@ -16,7 +16,9 @@ class EasyInput {
       this.keys.push(this.ignoreDupKey('Alt+'))
     }
 
-    let res = (this.isPrintableKey(event.keyCode) ? this.keys.join('') + event.key : '')
+    let res = this.isPrintableKey(event.keyCode)
+                ? this.keys.join('') + event.key.toUpperCase()
+                : ''
 
     this.keys = []
 
