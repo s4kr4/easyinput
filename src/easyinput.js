@@ -2,6 +2,8 @@
 
 class EasyInput {
   constructor() {
+    this.DIGIT_ZERO = 48
+    this.KEY_Z = 90
     this.keys = []
   }
 
@@ -34,7 +36,7 @@ class EasyInput {
   }
 
   isPrintableKey(keyCode) {
-    if (49 <= keyCode && keyCode <= 90) {
+    if (this.DIGIT_ZERO <= keyCode && keyCode <= this.KEY_Z) {
       return true
     } else {
       return false
