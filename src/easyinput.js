@@ -9,13 +9,13 @@ class EasyInput {
 
   handleKeyDown(event) {
     if (event.ctrlKey) {
-      this.keys.push(this.ignoreDupKey('Ctrl+'))
+      this.keys.push('Ctrl+')
     }
     if (event.shiftKey) {
-      this.keys.push(this.ignoreDupKey('Shift+'))
+      this.keys.push('Shift+')
     }
     if (event.altKey) {
-      this.keys.push(this.ignoreDupKey('Alt+'))
+      this.keys.push('Alt+')
     }
 
     let res = this.isPrintableKey(event.keyCode)
@@ -25,14 +25,6 @@ class EasyInput {
     this.keys = []
 
     return res
-  }
-
-  ignoreDupKey(key) {
-    if (this.keys.indexOf(key) === -1) {
-      return key
-    } else {
-      return ''
-    }
   }
 
   isPrintableKey(keyCode) {
