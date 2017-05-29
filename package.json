@@ -18,7 +18,9 @@
     "url": "https://github.com/s4kr4/easyinput/issues"
   },
   "homepage": "https://github.com/s4kr4/easyinput#readme",
-  "dependencies": {},
+  "dependencies": {
+    "keycode": "^2.1.9"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
