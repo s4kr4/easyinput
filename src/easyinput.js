@@ -1,5 +1,7 @@
 'use strict'
 
+import keycode from 'keycode'
+
 class EasyInput {
   constructor() {
     this.DIGIT_ZERO = 48
@@ -8,22 +10,21 @@ class EasyInput {
   }
 
   handleKeyDown(event) {
+    let prefix = ''
+
     if (event.ctrlKey) {
-      this.keys.push('Ctrl+')
+      prefix += 'Ctrl+'
     }
     if (event.shiftKey) {
-      this.keys.push('Shift+')
+      prefix += 'Shift+'
     }
     if (event.altKey) {
-      this.keys.push('Alt+')
+      prefix += 'Alt+'
     }
 
     let res = this.isPrintableKey(event.keyCode)
-                ? this.keys.join('') + event.key.toUpperCase()
+                ? prefix + keycode(event).toUpperCase()
                 : ''
-
-    this.keys = []
-
     return res
   }
 
