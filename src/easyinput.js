@@ -10,21 +10,24 @@ class EasyInput {
   }
 
   handleKeyDown(event) {
-    let prefix = ''
+    let res = ''
 
-    if (event.ctrlKey) {
-      prefix += 'Ctrl+'
-    }
-    if (event.shiftKey) {
-      prefix += 'Shift+'
-    }
-    if (event.altKey) {
-      prefix += 'Alt+'
+    if (this.isPrintableKey(event.keyCode)) {
+      let prefix = ''
+
+      if (event.ctrlKey) {
+        prefix += 'Ctrl+'
+      }
+      if (event.shiftKey) {
+        prefix += 'Shift+'
+      }
+      if (event.altKey) {
+        prefix += 'Alt+'
+      }
+
+      res = prefix + keycode(event).toUpperCase()
     }
 
-    let res = this.isPrintableKey(event.keyCode)
-                ? prefix + keycode(event).toUpperCase()
-                : ''
     return res
   }
 
