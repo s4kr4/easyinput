@@ -4,7 +4,7 @@
   "description": "Input special keys easily.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint index.js",
+    "lint": "eslint src/*.js",
     "test": "mocha --compilers js:babel-register test/**/*.js",
     "dev": "babel src --out-dir lib --watch --source-maps inline"
   },
