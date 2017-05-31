@@ -8,18 +8,29 @@ class EasyInput {
     this.KEY_Z = 90
 
     this.validKeys = {
-      ':': 186,
-      ';': 187,
+      ';': 186,
+      '=': 187,
       ',': 188,
       '-': 189,
       '.': 190,
       '/': 191,
       '`': 192,
+      '[': 219,
+      '\\': 220,
+      ']': 221,
     }
     for (let i = 48; i < 91; i++) {
       this.validKeys[String.fromCharCode(i)] = i
     }
-    console.log(this.validKeys)
+
+    this.validKeysWithShift = {
+      '~': 186,
+      ':': 187,
+      '{': 192,
+      '}': 219,
+      '|': 221,
+      '+': 222,
+    }
   }
 
   handleKeyDown(event) {
