@@ -34,9 +34,8 @@ class EasyInput {
   }
 
   handleKeyDown(event) {
-    console.log(event.keyCode)
-
     let res = ''
+    let key = ''
 
     if (this.isPrintableKey(event.keyCode)) {
       let prefix = ''
@@ -44,14 +43,19 @@ class EasyInput {
       if (event.ctrlKey) {
         prefix += 'Ctrl+'
       }
+
       if (event.shiftKey) {
         prefix += 'Shift+'
+        key = this.validKeysWithShift[event.keyCode]
+      } else {
+        key = keycode(event).toUpperCase()
       }
+
       if (event.altKey) {
         prefix += 'Alt+'
       }
 
-      res = prefix + keycode(event).toUpperCase()
+      res = prefix + key
     }
 
     return res
