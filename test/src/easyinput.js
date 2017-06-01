@@ -46,7 +46,7 @@ describe('EasyInputClass', () => {
 
     it('press "Ctrl + Shift + a" returns "Ctrl+Shift+A"', () => {
       assert.strictEqual(EasyInput.handleKeyDown({
-        key: 'a',
+        key: 'A',
         keyCode: 65,
         ctrlKey: true,
         shiftKey: true,
@@ -56,7 +56,7 @@ describe('EasyInputClass', () => {
 
     it('press "Ctrl + Shift + Alt + a" returns "Ctrl+Shift+Alt+A"', () => {
       assert.strictEqual(EasyInput.handleKeyDown({
-        key: 'a',
+        key: 'A',
         keyCode: 65,
         ctrlKey: true,
         shiftKey: true,
@@ -122,6 +122,46 @@ describe('EasyInputClass', () => {
         shiftKey: false,
         altKey: true,
       }), '')
+    })
+
+    it('press ";" returns ";"', () => {
+      assert.strictEqual(EasyInput.handleKeyDown({
+        key: ';',
+        keyCode: 186,
+        ctrlKey: false,
+        shiftKey: false,
+        altKey: false,
+      }), ';')
+    })
+
+    it('press "]" returns "]"', () => {
+      assert.strictEqual(EasyInput.handleKeyDown({
+        key: ']',
+        keyCode: 221,
+        ctrlKey: false,
+        shiftKey: false,
+        altKey: false,
+      }), ']')
+    })
+
+    it('press "Shift + ;" returns "+"', () => {
+      assert.strictEqual(EasyInput.handleKeyDown({
+        key: ';',
+        keyCode: 187,
+        ctrlKey: false,
+        shiftKey: true,
+        altKey: false,
+      }), '+')
+    })
+
+    it('press "Shift + ]" returns "}"', () => {
+      assert.strictEqual(EasyInput.handleKeyDown({
+        key: '}',
+        keyCode: 219,
+        ctrlKey: false,
+        shiftKey: true,
+        altKey: false,
+      }), '}')
     })
   })
 })
