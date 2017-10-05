@@ -1,11 +1,12 @@
 'use strict'
 
-import keycode from 'keycode'
+const keycodes = {
+  DIGIT_ZERO: 48,
+  KEY_Z: 90,
+}
 
-class EasyInput {
+export default class EasyInput {
   constructor() {
-    this.DIGIT_ZERO = 48
-    this.KEY_Z = 90
     this.keys = []
   }
 
@@ -25,20 +26,18 @@ class EasyInput {
         prefix += 'Alt+'
       }
 
-      res = prefix + keycode(event).toUpperCase()
+      res = prefix + event.key.toUpperCase()
     }
 
     return res
   }
 
   isPrintableKey(keyCode) {
-    if (this.DIGIT_ZERO <= keyCode && keyCode <= this.KEY_Z) {
+    if (keycodes.DIGIT_ZERO <= keyCode && keyCode <= keycodes.KEY_Z) {
       return true
     } else {
       return false
     }
   }
 }
-
-module.exports = new EasyInput()
 
