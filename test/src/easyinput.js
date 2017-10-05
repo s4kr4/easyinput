@@ -1,5 +1,5 @@
 import { assert } from 'chai'
-import EasyInput from '../../src/easyinput.js'
+import EasyInput from '../../src'
 
 describe('EasyInputClass', () => {
 
