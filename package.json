@@ -29,6 +29,11 @@
     "eslint": "^3.19.0",
     "mocha": "^3.4.1"
   },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "files": [
     "index.js",
     "lib"
