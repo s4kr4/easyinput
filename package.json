@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/*.js",
-    "test": "mocha --compilers js:babel-register test/**/*.js",
+    "test": "mocha --require @babel/register 'test/**/*.js'",
     "dev": "babel src --out-dir lib --watch --source-maps inline"
   },
   "repository": {
@@ -22,12 +22,15 @@
     "keycode": "^2.1.9"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
-    "chai": "^3.5.0",
-    "eslint": "^3.19.0",
-    "mocha": "^3.4.1"
+    "@babel/cli": "^8.0.6",
+    "@babel/core": "^8.0.7",
+    "@babel/preset-env": "^8.0.7",
+    "@babel/register": "^8.0.6",
+    "@eslint/js": "^10.0.1",
+    "chai": "^6.3.0",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "mocha": "^12.0.3"
   },
   "files": [
     "index.js",
